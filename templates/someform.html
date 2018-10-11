@@ -38,6 +38,15 @@
             </div>
 
             <div class = "form-group">
+            {{ form.bdate.label(class_="text-primary") }} 
+            {{ form.bdate(class_="form-control mb-3", type= "date") }}
+
+            {% for error in form.bdate.errors %}
+                <code class = "text-danger small">{{ error }}</code>
+            {% endfor %}
+            </div>
+
+            <div class = "form-group">
             {{ form.email.label(class_="text-primary") }} 
             {{ form.email(class_="form-control mb-3") }}
 

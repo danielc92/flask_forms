@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, validators
+from wtforms import StringField, PasswordField, validators, DateField
 from wtforms.validators import ValidationError
 from wtforms.fields.html5 import EmailField
 import string
+import datetime
 
 
 # Custom funcitons
@@ -30,6 +31,11 @@ def checkPassword(form, field):
 		if char not in allowable:
 			raise ValidationError("Passwords can contain a-z, A-Z, 0-9 and '!@#$%^&*' only.")
 
+def checkDate(form, field):
+	user_dob = field.data
+	today = datetime.date.today()
+	if user_dob > today:
+		raise ValidationError("Invalid birthday, you are not a time traveller.")
 
 class someForm(FlaskForm):
 	
@@ -40,8 +46,12 @@ class someForm(FlaskForm):
 
 	lname = StringField('Last Name', 
 		[validators.InputRequired(), 
-		validators.Length(min = 1, max = 30, message = "Last name must be between 1-30 chars."),
+		validators.Length(min = 1, max = 30, message = "Last name must be between 1-30 chars."), 
 		checkName])
+
+	bdate = DateField('Date of Birth', format = '%Y-%m-%d',
+		validators = [validators.InputRequired(),
+		checkDate])
 
 	email = EmailField('Email', 
 		[validators.InputRequired(), 
