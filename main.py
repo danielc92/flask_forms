@@ -62,18 +62,18 @@ class someForm(FlaskForm):
 		validators.Length(min = 6, max = 20, message = "Password must be between 6-20 chars."),
 		checkPassword])
 
+	confirm_password = PasswordField('Confirm Password',
+		[validators.InputRequired(),
+		validators.EqualTo('password', message = "Passwords have to match dude.")])
+
 
 @app.route('/', methods = ['GET','POST'])
 def someform():
 	
 	form = someForm()
 
-	
-
 	if form.validate_on_submit():
 
-		print("Validated succesfully")
-		print(form.name.data, form.lname.data.strip().upper(), form.email.data, form.username.data, form.password.data)
 		return redirect(url_for('success'))
 
 
