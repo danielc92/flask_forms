@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Flask Forms</title>
+</head>
+
+<body>
+    <div class="container"> <h3>Flask WTForms Example</h3>
+
+
+        <form method="POST" action="">
+
+        	{{ form.csrf_token }}
+
+        	<div class = "form-group">
+            {{ form.name.label(class_="text-primary") }} 
+            {{ form.name(class_="form-control mb-3") }}
+
+            {% for error in form.name.errors %}
+            	<code class = "text-danger small">{{ error }}</code>
+            {% endfor %}
+            </div>
+
+            <div class = "form-group">
+            {{ form.lname.label(class_="text-primary") }} 
+            {{ form.lname(class_="form-control mb-3") }}
+
+            {% for error in form.lname.errors %}
+            	<code class = "text-danger small">{{ error }}</code>
+            {% endfor %}
+            </div>
+
+            <div class = "form-group">
+            {{ form.email.label(class_="text-primary") }} 
+            {{ form.email(class_="form-control mb-3") }}
+
+            {% for error in form.email.errors %}
+            	<code class = "text-danger small">{{ error }}</code>
+            {% endfor %}
+            </div>
+
+            <div class = "form-group">
+            {{ form.username.label(class_="text-primary") }} 
+            {{ form.username(class_="form-control mb-3") }}
+
+            {% for error in form.username.errors %}
+            	<code class = "text-danger small">{{ error }}</code>
+            {% endfor %}
+            </div>
+
+            <div class = "form-group">
+            {{ form.password.label(class_="text-primary") }} 
+            {{ form.password(class_="form-control mb-3") }}
+
+            {% for error in form.password.errors %}
+            	<code class = "text-danger small">{{ error }}</code>
+            {% endfor %}
+        	</div>
+
+            <input class="btn btn-outline-primary mt-3" type="submit" value="Post">
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>
