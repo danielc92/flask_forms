@@ -20,8 +20,8 @@
         	{{ form.csrf_token }}
 
         	<div class = "form-group">
-            {{ form.name.label(class_="text-primary") }} 
-            {{ form.name(class_="form-control mb-3") }}
+            {{ form.name.label(class_=label_class) }} 
+            {{ form.name(class_="form-control mb-3",placeholder="First Name...") }}
 
             {% for error in form.name.errors %}
             	<code class = "text-danger small">{{ error }}</code>
@@ -29,8 +29,8 @@
             </div>
 
             <div class = "form-group">
-            {{ form.lname.label(class_="text-primary") }} 
-            {{ form.lname(class_="form-control mb-3") }}
+            {{ form.lname.label(class_=label_class) }} 
+            {{ form.lname(class_="form-control mb-3", placeholder = "Last Name...") }}
 
             {% for error in form.lname.errors %}
             	<code class = "text-danger small">{{ error }}</code>
@@ -38,7 +38,7 @@
             </div>
 
             <div class = "form-group">
-            {{ form.bdate.label(class_="text-primary") }} 
+            {{ form.bdate.label(class_=label_class) }} 
             {{ form.bdate(class_="form-control mb-3", type= "date") }}
 
             {% for error in form.bdate.errors %}
@@ -47,8 +47,8 @@
             </div>
 
             <div class = "form-group">
-            {{ form.email.label(class_="text-primary") }} 
-            {{ form.email(class_="form-control mb-3") }}
+            {{ form.email.label(class_=label_class) }} 
+            {{ form.email(class_="form-control mb-3",placeholder="Email...") }}
 
             {% for error in form.email.errors %}
             	<code class = "text-danger small">{{ error }}</code>
@@ -56,8 +56,8 @@
             </div>
 
             <div class = "form-group">
-            {{ form.username.label(class_="text-primary") }} 
-            {{ form.username(class_="form-control mb-3") }}
+            {{ form.username.label(class_=label_class) }} 
+            {{ form.username(class_="form-control mb-3", placeholder="Username...") }}
 
             {% for error in form.username.errors %}
             	<code class = "text-danger small">{{ error }}</code>
@@ -65,8 +65,8 @@
             </div>
 
             <div class = "form-group">
-            {{ form.password.label(class_="text-primary") }} 
-            {{ form.password(class_="form-control mb-3") }}
+            {{ form.password.label(class_=label_class) }} 
+            {{ form.password(class_="form-control mb-3",placeholder="Password...") }}
 
             {% for error in form.password.errors %}
             	<code class = "text-danger small">{{ error }}</code>
@@ -74,8 +74,8 @@
         	</div>
 
             <div class = "form-group">
-            {{ form.confirm_password.label(class_="text-primary") }} 
-            {{ form.confirm_password(class_="form-control mb-3") }}
+            {{ form.confirm_password.label(class_=label_class) }} 
+            {{ form.confirm_password(class_="form-control mb-3",placeholder="Confirm Password...") }}
 
             {% for error in form.confirm_password.errors %}
                 <code class = "text-danger small">{{ error }}</code>
@@ -83,8 +83,8 @@
             </div>
 
             <div class = "form-group">
-            {{ form.age.label(class_="text-primary") }} 
-            {{ form.age(class_="form-control mb-3", type="number") }}
+            {{ form.age.label(class_=label_class) }} 
+            {{ form.age(class_="form-control mb-3", type="number", placeholder="Age...") }}
 
             {% for error in form.age.errors %}
                 <code class = "text-danger small">{{ error }}</code>
@@ -92,8 +92,8 @@
             </div>
 
             <div class = "form-group">
-            {{ form.height.label(class_="text-primary") }} 
-            {{ form.height(class_="form-control mb-3", type="number", step="0.1") }}
+            {{ form.height.label(class_=label_class) }} 
+            {{ form.height(class_="form-control mb-3", type="number", step="0.1", placeholder="Height...") }}
 
             {% for error in form.height.errors %}
                 <code class = "text-danger small">{{ error }}</code>

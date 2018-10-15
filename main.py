@@ -15,9 +15,12 @@ def someform():
 		print(form.age.data, type(form.age.data))
 		print(form.height.data, type(form.height.data))
 		print(form.username.data, type(form.username.data))
+		print(form.bdate.data, type(form.bdate.data))
 		return redirect(url_for('success'))
 
-	return render_template('someform.html', form = form)
+	return render_template('someform.html', 
+		form = form, 
+		label_class = "text-primary font-weight-bold")
 
 @app.route('/success')
 def success():
