@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, validators, DateField
+from wtforms import StringField, IntegerField, FloatField,PasswordField, validators, DateField
 from wtforms.validators import ValidationError
 from wtforms.fields.html5 import EmailField
 import string
@@ -37,6 +37,7 @@ def checkDate(form, field):
 	if user_dob > today:
 		raise ValidationError("Invalid birthday, you are not a time traveller.")
 
+
 class someForm(FlaskForm):
 	
 	name = StringField('First Name', 
@@ -70,3 +71,11 @@ class someForm(FlaskForm):
 	confirm_password = PasswordField('Confirm Password',
 		[validators.InputRequired(),
 		validators.EqualTo('password', message = "Passwords have to match dude.")])
+
+	age = IntegerField("Age",
+		[validators.InputRequired(),
+		validators.NumberRange(min=1,max =120, message = "Age must be between 1-120")])
+
+	height = FloatField("Height",
+		[validators.InputRequired(),
+		validators.NumberRange(min=50.5, max=250.3, message="Height must be between 50.5 and 250.3")])

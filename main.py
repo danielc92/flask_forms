@@ -12,7 +12,9 @@ def someform():
 	form = someForm()
 
 	if form.validate_on_submit():
-
+		print(form.age.data, type(form.age.data))
+		print(form.height.data, type(form.height.data))
+		print(form.username.data, type(form.username.data))
 		return redirect(url_for('success'))
 
 	return render_template('someform.html', form = form)
